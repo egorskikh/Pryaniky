@@ -10,7 +10,6 @@
 		1442AECE26A833A80042056D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AECD26A833A80042056D /* AppDelegate.swift */; };
 		1442AED026A833A80042056D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AECF26A833A80042056D /* SceneDelegate.swift */; };
 		1442AED226A833A80042056D /* PryanikyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AED126A833A80042056D /* PryanikyVC.swift */; };
-		1442AED526A833A80042056D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1442AED326A833A80042056D /* Main.storyboard */; };
 		1442AED726A833AF0042056D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1442AED626A833AF0042056D /* Assets.xcassets */; };
 		1442AEDA26A833AF0042056D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1442AED826A833AF0042056D /* LaunchScreen.storyboard */; };
 		1442AEE726A83E7A0042056D /* PryanikyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEE626A83E7A0042056D /* PryanikyView.swift */; };
@@ -26,7 +25,6 @@
 		1442AECD26A833A80042056D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1442AECF26A833A80042056D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1442AED126A833A80042056D /* PryanikyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyVC.swift; sourceTree = "<group>"; };
-		1442AED426A833A80042056D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1442AED626A833AF0042056D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1442AED926A833AF0042056D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1442AEDB26A833AF0042056D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 		1442AEED26A83FDA0042056D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1442AED326A833A80042056D /* Main.storyboard */,
 				1442AED126A833A80042056D /* PryanikyVC.swift */,
 			);
 			path = Controller;
@@ -240,7 +237,6 @@
 			files = (
 				1442AEDA26A833AF0042056D /* LaunchScreen.storyboard in Resources */,
 				1442AED726A833AF0042056D /* Assets.xcassets in Resources */,
-				1442AED526A833A80042056D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,14 +262,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1442AED326A833A80042056D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1442AED426A833A80042056D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1442AED826A833AF0042056D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -416,7 +404,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.egorskikh.Pryaniky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -435,7 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.egorskikh.Pryaniky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
