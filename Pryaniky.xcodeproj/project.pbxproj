@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		1442AECE26A833A80042056D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AECD26A833A80042056D /* AppDelegate.swift */; };
 		1442AED026A833A80042056D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AECF26A833A80042056D /* SceneDelegate.swift */; };
-		1442AED226A833A80042056D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AED126A833A80042056D /* ViewController.swift */; };
+		1442AED226A833A80042056D /* PryanikyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AED126A833A80042056D /* PryanikyVC.swift */; };
 		1442AED526A833A80042056D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1442AED326A833A80042056D /* Main.storyboard */; };
 		1442AED726A833AF0042056D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1442AED626A833AF0042056D /* Assets.xcassets */; };
 		1442AEDA26A833AF0042056D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1442AED826A833AF0042056D /* LaunchScreen.storyboard */; };
+		1442AEE726A83E7A0042056D /* PryanikyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEE626A83E7A0042056D /* PryanikyView.swift */; };
+		1442AEE926A83F0D0042056D /* PryanikyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEE826A83F0D0042056D /* PryanikyViewModel.swift */; };
+		1442AEEC26A83FAA0042056D /* PryanikyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEEB26A83FAA0042056D /* PryanikyResponse.swift */; };
+		1442AEF426A840520042056D /* PryanikyViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEF326A840520042056D /* PryanikyViewModelType.swift */; };
+		1442AEF626A8409E0042056D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEF526A8409E0042056D /* NetworkService.swift */; };
+		1442AEF826A840AE0042056D /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEF726A840AE0042056D /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1442AECA26A833A80042056D /* Pryaniky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pryaniky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1442AECD26A833A80042056D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1442AECF26A833A80042056D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1442AED126A833A80042056D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1442AED126A833A80042056D /* PryanikyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyVC.swift; sourceTree = "<group>"; };
 		1442AED426A833A80042056D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1442AED626A833AF0042056D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1442AED926A833AF0042056D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1442AEDB26A833AF0042056D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1442AEE626A83E7A0042056D /* PryanikyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyView.swift; sourceTree = "<group>"; };
+		1442AEE826A83F0D0042056D /* PryanikyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyViewModel.swift; sourceTree = "<group>"; };
+		1442AEEB26A83FAA0042056D /* PryanikyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyResponse.swift; sourceTree = "<group>"; };
+		1442AEF326A840520042056D /* PryanikyViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyViewModelType.swift; sourceTree = "<group>"; };
+		1442AEF526A8409E0042056D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1442AEF726A840AE0042056D /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +113,72 @@
 		1442AEE526A837410042056D /* PryanikyModule */ = {
 			isa = PBXGroup;
 			children = (
-				1442AED326A833A80042056D /* Main.storyboard */,
-				1442AED126A833A80042056D /* ViewController.swift */,
+				1442AEF226A840380042056D /* Contract */,
+				1442AEF126A8402F0042056D /* Model */,
+				1442AEF026A840210042056D /* ViewModel */,
+				1442AEEF26A840060042056D /* Managers */,
+				1442AEEE26A83FF60042056D /* View */,
+				1442AEED26A83FDA0042056D /* Controller */,
 			);
 			path = PryanikyModule;
+			sourceTree = "<group>";
+		};
+		1442AEEA26A83F280042056D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1442AEF526A8409E0042056D /* NetworkService.swift */,
+				1442AEF726A840AE0042056D /* NetworkDataFetcher.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1442AEED26A83FDA0042056D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1442AED326A833A80042056D /* Main.storyboard */,
+				1442AED126A833A80042056D /* PryanikyVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1442AEEE26A83FF60042056D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1442AEE626A83E7A0042056D /* PryanikyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1442AEEF26A840060042056D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1442AEEA26A83F280042056D /* Networking */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		1442AEF026A840210042056D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1442AEE826A83F0D0042056D /* PryanikyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1442AEF126A8402F0042056D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1442AEEB26A83FAA0042056D /* PryanikyResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1442AEF226A840380042056D /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				1442AEF326A840520042056D /* PryanikyViewModelType.swift */,
+			);
+			path = Contract;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +251,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1442AED226A833A80042056D /* ViewController.swift in Sources */,
+				1442AEE926A83F0D0042056D /* PryanikyViewModel.swift in Sources */,
+				1442AED226A833A80042056D /* PryanikyVC.swift in Sources */,
+				1442AEF626A8409E0042056D /* NetworkService.swift in Sources */,
+				1442AEF426A840520042056D /* PryanikyViewModelType.swift in Sources */,
+				1442AEEC26A83FAA0042056D /* PryanikyResponse.swift in Sources */,
 				1442AECE26A833A80042056D /* AppDelegate.swift in Sources */,
+				1442AEF826A840AE0042056D /* NetworkDataFetcher.swift in Sources */,
 				1442AED026A833A80042056D /* SceneDelegate.swift in Sources */,
+				1442AEE726A83E7A0042056D /* PryanikyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
