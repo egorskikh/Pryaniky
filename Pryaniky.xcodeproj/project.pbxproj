@@ -14,10 +14,13 @@
 		1442AEDA26A833AF0042056D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1442AED826A833AF0042056D /* LaunchScreen.storyboard */; };
 		1442AEE726A83E7A0042056D /* PryanikyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEE626A83E7A0042056D /* PryanikyView.swift */; };
 		1442AEE926A83F0D0042056D /* PryanikyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEE826A83F0D0042056D /* PryanikyViewModel.swift */; };
-		1442AEEC26A83FAA0042056D /* PryanikyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEEB26A83FAA0042056D /* PryanikyResponse.swift */; };
+		1442AEEC26A83FAA0042056D /* HzModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEEB26A83FAA0042056D /* HzModel.swift */; };
 		1442AEF426A840520042056D /* PryanikyViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEF326A840520042056D /* PryanikyViewModelType.swift */; };
 		1442AEF626A8409E0042056D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEF526A8409E0042056D /* NetworkService.swift */; };
 		1442AEF826A840AE0042056D /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEF726A840AE0042056D /* NetworkDataFetcher.swift */; };
+		1442AEFA26A93FB90042056D /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEF926A93FB90042056D /* PictureModel.swift */; };
+		1442AEFC26A93FE70042056D /* SelectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEFB26A93FE70042056D /* SelectorModel.swift */; };
+		1442AEFF26A940300042056D /* SelectorVariantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AEFE26A940300042056D /* SelectorVariantsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +33,13 @@
 		1442AEDB26A833AF0042056D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1442AEE626A83E7A0042056D /* PryanikyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyView.swift; sourceTree = "<group>"; };
 		1442AEE826A83F0D0042056D /* PryanikyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyViewModel.swift; sourceTree = "<group>"; };
-		1442AEEB26A83FAA0042056D /* PryanikyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyResponse.swift; sourceTree = "<group>"; };
+		1442AEEB26A83FAA0042056D /* HzModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HzModel.swift; sourceTree = "<group>"; };
 		1442AEF326A840520042056D /* PryanikyViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyViewModelType.swift; sourceTree = "<group>"; };
 		1442AEF526A8409E0042056D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1442AEF726A840AE0042056D /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		1442AEF926A93FB90042056D /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
+		1442AEFB26A93FE70042056D /* SelectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorModel.swift; sourceTree = "<group>"; };
+		1442AEFE26A940300042056D /* SelectorVariantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorVariantsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +171,10 @@
 		1442AEF126A8402F0042056D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1442AEEB26A83FAA0042056D /* PryanikyResponse.swift */,
+				1442AEEB26A83FAA0042056D /* HzModel.swift */,
+				1442AEF926A93FB90042056D /* PictureModel.swift */,
+				1442AEFB26A93FE70042056D /* SelectorModel.swift */,
+				1442AEFE26A940300042056D /* SelectorVariantsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,14 +256,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1442AEFF26A940300042056D /* SelectorVariantsModel.swift in Sources */,
 				1442AEE926A83F0D0042056D /* PryanikyViewModel.swift in Sources */,
 				1442AED226A833A80042056D /* PryanikyVC.swift in Sources */,
 				1442AEF626A8409E0042056D /* NetworkService.swift in Sources */,
 				1442AEF426A840520042056D /* PryanikyViewModelType.swift in Sources */,
-				1442AEEC26A83FAA0042056D /* PryanikyResponse.swift in Sources */,
+				1442AEEC26A83FAA0042056D /* HzModel.swift in Sources */,
+				1442AEFC26A93FE70042056D /* SelectorModel.swift in Sources */,
 				1442AECE26A833A80042056D /* AppDelegate.swift in Sources */,
 				1442AEF826A840AE0042056D /* NetworkDataFetcher.swift in Sources */,
 				1442AED026A833A80042056D /* SceneDelegate.swift in Sources */,
+				1442AEFA26A93FB90042056D /* PictureModel.swift in Sources */,
 				1442AEE726A83E7A0042056D /* PryanikyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
