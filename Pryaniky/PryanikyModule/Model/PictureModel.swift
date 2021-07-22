@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct PictureModel: Decodable {
+    let url: String
+    let text: String
+}

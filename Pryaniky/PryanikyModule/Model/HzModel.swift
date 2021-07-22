@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct HzModel: Decodable {
+    let text: String
+}

@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct SelectorModel: Decodable {
+    let selectedId: Int
+    let variants: [SelectorVariantsModel]
+}
+
+struct SelectorVariantsModel: Decodable {
+    let id: Int
+    let text: String
+}
