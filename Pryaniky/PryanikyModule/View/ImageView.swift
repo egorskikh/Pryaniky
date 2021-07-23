@@ -11,7 +11,6 @@ class ImageView: UIView {
 
     lazy var imageView: UIImageView = {
         var imageView = UIImageView()
-      //  imageView.backgroundColor = .yellow
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -24,15 +23,25 @@ class ImageView: UIView {
         return label
     }()
 
+    private var tapViewCallback: (() -> Void)?
+
     // MARK: - Life Cycle
+
+    init(tapViewCallback: @escaping () -> Void) {
+        super.init(frame: .zero)
+        self.tapViewCallback = tapViewCallback
+        setupConstraint()
+        addTap()
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraint()
+        addTap()
     }
 
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Private Methods
@@ -43,7 +52,7 @@ class ImageView: UIView {
 
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            imageView.heightAnchor.constraint(equalToConstant: 200),
+            imageView.heightAnchor.constraint(equalToConstant: 150),
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1),
             imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 
@@ -52,8 +61,15 @@ class ImageView: UIView {
             nameImagelabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
             nameImagelabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
         ])
+    }
 
+    private func addTap() {
+        let selector = #selector(self.viewlDidTapped)
+        self.addGTapRecognizer(selector: selector)
+    }
 
+    @objc private func viewlDidTapped() {
+        tapViewCallback?()
     }
 
     // MARK: - Public Methods

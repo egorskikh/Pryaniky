@@ -11,57 +11,65 @@ class PryanikyVC: UIViewController {
 
     // MARK: - Property
     private var mainView = MainView()
-    private var networkDataFetcher = NetworkDataFetcher()
+    private var viewModel = PryanikyViewModel()
 
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupNavigationController()
-        setupAddSubview()
         setupScrollViewConstraint()
         setupStackViewConstraint()
+    }
 
-        networkDataFetcher.fetchJSON { data in
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchJSON()
+    }
+
+    // MARK: - Private Methods
+
+    private func fetchJSON() {
+        viewModel.networkDataFetcher.fetchJSON { data in
             guard let data = data else { return }
-            print(data)
-            self.showSuccessViews(forData: data)
+            self.showViewsFromJSONFile(forData: data)
         }
     }
 
-    private func showSuccessViews(forData viewsDataModel: ResponseDataModel) {
-
+    private func showViewsFromJSONFile(forData viewsDataModel: ResponseDataModel) {
         let viewsArray = viewsDataModel.views
-        let views = viewsDataModel.data
+        let data = viewsDataModel.data
 
         viewsArray.forEach {
-            let name = $0
-            let model: ContentDataModel? = views.first { model -> Bool in
-                model.title == name
+            let view = $0
+            let model: ContentDataModel? = data.first { model -> Bool in
+                model.title == view
             }
 
             guard let contentModel = model?.body else { return }
 
-            switch name {
+            switch view {
             case "hz":
                 if let hz: HzModel = contentModel.getContent() {
-                    let view = TextBlockView()
-                    print("This is HZ: \(hz)")
+                    let view = TextBlockView() { [weak self] in
+                        self?.viewModel.didTappedView(title: model?.title)
+                    }
                     view.setTextContent(content: hz)
                     mainView.stackView.addArrangedSubview(view)
                 }
             case "picture":
                 if let picture: PictureModel = contentModel.getContent() {
-                    print("This is PICTURE: \(picture)")
-                    let view = ImageView()
+                    let view = ImageView() { [weak self] in
+                        self?.viewModel.didTappedView(title: model?.title)
+                    }
                     view.showContent(content: picture)
                     mainView.stackView.addArrangedSubview(view)
                 }
             case "selector":
                 if let selector: SelectorModel = contentModel.getContent() {
-                    print("This is SELECTOR: \(selector)")
-                    let view = SelectorView()
+                    let view = SelectorView() { [weak self] index in
+                        self?.viewModel.didTappedView(id: index, title: model?.title)
+                    }
                     view.setSegmentedTextContent(selector)
                     mainView.stackView.addArrangedSubview(view)
                 }
@@ -71,20 +79,15 @@ class PryanikyVC: UIViewController {
         }
     }
 
-    // MARK: - Private Methods
-
     private func setupNavigationController() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Pryaniky"
-        view.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.7447180133, blue: 0.8628635712, alpha: 1)
+        view.backgroundColor = UIColor(red: 255/255, green: 154/255, blue: 25/255, alpha: 1.0)
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
 
-    func setupAddSubview() {
-        view.addSubview(mainView.scrollView)
-    }
-
     private func setupScrollViewConstraint() {
+        view.addSubview(mainView.scrollView)
         let frameLayoutGuide = mainView.scrollView.frameLayoutGuide
 
         NSLayoutConstraint.activate([

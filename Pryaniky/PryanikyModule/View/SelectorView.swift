@@ -21,6 +21,15 @@ class SelectorView: UIView {
     private var selector: SelectorModel?
     private var tapViewCallback: ((_ index: Int) -> Void)?
 
+    init(tapViewCallback: @escaping (_ index: Int) -> Void) {
+        super.init(frame: .zero)
+        self.tapViewCallback = tapViewCallback
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Action
 
     @objc private func indexChanged() {

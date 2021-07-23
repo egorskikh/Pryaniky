@@ -25,6 +25,7 @@
 		1442AF0726A990560042056D /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AF0626A990560042056D /* SelectorView.swift */; };
 		1442AF0926A990930042056D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AF0826A990930042056D /* ImageView.swift */; };
 		1442AF0C26A9B4AF0042056D /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AF0B26A9B4AF0042056D /* ExtensionUIImageView.swift */; };
+		1442AF1026AA8DE60042056D /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442AF0F26AA8DE60042056D /* ExtensionUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		1442AF0626A990560042056D /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
 		1442AF0826A990930042056D /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		1442AF0B26A9B4AF0042056D /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
+		1442AF0F26AA8DE60042056D /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				1442AF0B26A9B4AF0042056D /* ExtensionUIImageView.swift */,
+				1442AF0F26AA8DE60042056D /* ExtensionUIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1442AF1026AA8DE60042056D /* ExtensionUIView.swift in Sources */,
 				1442AF0926A990930042056D /* ImageView.swift in Sources */,
 				1442AEE926A83F0D0042056D /* PryanikyViewModel.swift in Sources */,
 				1442AF0726A990560042056D /* SelectorView.swift in Sources */,

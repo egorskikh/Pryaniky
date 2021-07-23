@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+protocol PryanikyViewModelType: AnyObject {
+    func didTappedView(id: Int?, title: String?)
+}
+
+extension PryanikyViewModelType {
+    func didTappedView(id: Int? = nil, title: String?) {
+        return didTappedView(id: id, title: title)
+    }
+}
+
+//protocol MainScreenViewImpl: AnyObject {
+//    func showInformationAlert(withMessage message: String)
+//}
+
+

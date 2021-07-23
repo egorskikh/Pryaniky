@@ -13,22 +13,32 @@ class TextBlockView: UIView {
         var label = UILabel()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .lightGray
+        label.backgroundColor = UIColor(red: 255/255, green: 154/255, blue: 25/255, alpha: 1.0)
         label.clipsToBounds = true
         label.layer.cornerRadius = 10
         label.textColor = .white
         return label
     }()
 
+    private var tapViewCallback: (() -> Void)?
+
     // MARK: - Life Cycle
+
+    init(tapViewCallback: @escaping () -> Void) {
+        super.init(frame: .zero)
+        self.tapViewCallback = tapViewCallback
+        setupConstraint()
+        addTap()
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraint()
+        addTap()
     }
 
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Private Methods
@@ -43,6 +53,15 @@ class TextBlockView: UIView {
             textBlock.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             textBlock.heightAnchor.constraint(equalToConstant: 80)
         ])
+    }
+
+    private func addTap() {
+        let selector = #selector(self.viewlDidTapped)
+        self.addGTapRecognizer(selector: selector)
+    }
+
+    @objc private func viewlDidTapped() {
+        tapViewCallback?()
     }
 
     // MARK: - Public Methods
