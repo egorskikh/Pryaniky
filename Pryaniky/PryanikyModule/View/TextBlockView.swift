@@ -66,7 +66,7 @@ class TextBlockView: UIView {
 
     // MARK: - Public Methods
 
-    func setTextContent(content: HzModel) {
+    public func setTextContent(content: HzModel) {
         textBlock.text = content.text 
     }
 

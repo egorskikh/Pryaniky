@@ -17,8 +17,5 @@ extension PryanikyViewModelType {
     }
 }
 
-//protocol MainScreenViewImpl: AnyObject {
-//    func showInformationAlert(withMessage message: String)
-//}
 
 

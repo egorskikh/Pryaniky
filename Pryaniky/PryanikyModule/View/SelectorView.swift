@@ -45,15 +45,6 @@ class SelectorView: UIView {
         tapViewCallback?(index)
     }
 
-    // MARK: - Public Methods
-
-    public func setSegmentedTextContent(_ content: SelectorModel) {
-        self.selector = content
-        createSegmentControl(content: content)
-        setupConstraint()
-        label.text = content.variants[content.selectedId].text
-    }
-
     // MARK: - Private Methods
 
     private func setupConstraint() {
@@ -87,6 +78,15 @@ class SelectorView: UIView {
         segmentControl.selectedSegmentIndex = content.selectedId
         segmentControl.addTarget(self, action: #selector(indexChanged), for: .valueChanged)
         self.segmentControl = segmentControl
+    }
+
+    // MARK: - Public Methods
+
+    public func setSegmentedTextContent(_ content: SelectorModel) {
+        self.selector = content
+        createSegmentControl(content: content)
+        setupConstraint()
+        label.text = content.variants[content.selectedId].text
     }
 
 }

@@ -10,6 +10,7 @@ import UIKit
 class PryanikyVC: UIViewController {
 
     // MARK: - Property
+    
     private var mainView = MainView()
     private var viewModel = PryanikyViewModel()
 
@@ -24,57 +25,55 @@ class PryanikyVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchJSON()
+        showViewsFromJSON()
     }
 
     // MARK: - Private Methods
 
-    private func fetchJSON() {
-        viewModel.networkDataFetcher.fetchJSON { data in
-            guard let data = data else { return }
-            self.showViewsFromJSONFile(forData: data)
-        }
-    }
+    private func showViewsFromJSON() {
+        viewModel.networkDataFetcher.fetchJSON { dataJSON in
+            guard let dataJSON = dataJSON else { return }
 
-    private func showViewsFromJSONFile(forData viewsDataModel: ResponseDataModel) {
-        let viewsArray = viewsDataModel.views
-        let data = viewsDataModel.data
+            let viewsArray = dataJSON.views
+            let data = dataJSON.data
 
-        viewsArray.forEach {
-            let view = $0
-            let model: ContentDataModel? = data.first { model -> Bool in
-                model.title == view
-            }
-
-            guard let contentModel = model?.body else { return }
-
-            switch view {
-            case "hz":
-                if let hz: HzModel = contentModel.getContent() {
-                    let view = TextBlockView() { [weak self] in
-                        self?.viewModel.didTappedView(title: model?.title)
-                    }
-                    view.setTextContent(content: hz)
-                    mainView.stackView.addArrangedSubview(view)
+            viewsArray.forEach {
+                let view = $0
+                let model: ContentDataModel? = data.first { model -> Bool in
+                    model.title == view
                 }
-            case "picture":
-                if let picture: PictureModel = contentModel.getContent() {
-                    let view = ImageView() { [weak self] in
-                        self?.viewModel.didTappedView(title: model?.title)
+
+                guard let contentModel = model?.body else { return }
+
+                switch view {
+                case "hz":
+                    if let hz: HzModel = contentModel.getContent() {
+                        let view = TextBlockView() { [weak self] in
+                            self?.viewModel.didTappedView(title: model?.title)
+                        }
+                        view.setTextContent(content: hz)
+                        self.mainView.stackView.addArrangedSubview(view)
                     }
-                    view.showContent(content: picture)
-                    mainView.stackView.addArrangedSubview(view)
-                }
-            case "selector":
-                if let selector: SelectorModel = contentModel.getContent() {
-                    let view = SelectorView() { [weak self] index in
-                        self?.viewModel.didTappedView(id: index, title: model?.title)
+                case "picture":
+                    if let picture: PictureModel = contentModel.getContent() {
+                        let view = ImageView() { [weak self] in
+                            self?.viewModel.didTappedView(title: model?.title)
+                        }
+                        view.showContent(content: picture)
+                        self.mainView.stackView.addArrangedSubview(view)
                     }
-                    view.setSegmentedTextContent(selector)
-                    mainView.stackView.addArrangedSubview(view)
+                case "selector":
+                    if let selector: SelectorModel = contentModel.getContent() {
+                        let view = SelectorView() { [weak self] index in
+                            self?.viewModel.didTappedView(id: index, title: model?.title)
+                        }
+                        view.setSegmentedTextContent(selector)
+                        self.mainView.stackView.addArrangedSubview(view)
+                    }
+                default:
+                    print("Ops... missed the show VIEW")
+                    break
                 }
-            default:
-                break
             }
         }
     }
