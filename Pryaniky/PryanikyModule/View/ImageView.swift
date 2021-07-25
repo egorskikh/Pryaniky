@@ -52,7 +52,7 @@ class ImageView: UIView {
 
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            imageView.heightAnchor.constraint(equalToConstant: 150),
+            imageView.heightAnchor.constraint(equalToConstant: 100),
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1),
             imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 

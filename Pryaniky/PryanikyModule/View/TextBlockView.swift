@@ -9,15 +9,16 @@ import UIKit
 
 class TextBlockView: UIView {
 
-    lazy var textBlock: UILabel = {
-        var label = UILabel()
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = UIColor(red: 255/255, green: 154/255, blue: 25/255, alpha: 1.0)
-        label.clipsToBounds = true
-        label.layer.cornerRadius = 10
-        label.textColor = .white
-        return label
+    lazy var textBlock: UITextView = {
+        var textView = UITextView()
+        textView.textAlignment = .center
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.isUserInteractionEnabled = false
+        textView.backgroundColor = UIColor(red: 255/255, green: 154/255, blue: 25/255, alpha: 1.0)
+        textView.clipsToBounds = true
+        textView.layer.cornerRadius = 10
+        textView.textColor = .white
+        return textView
     }()
 
     private var tapViewCallback: (() -> Void)?
@@ -51,7 +52,7 @@ class TextBlockView: UIView {
             textBlock.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             textBlock.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             textBlock.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            textBlock.heightAnchor.constraint(equalToConstant: 80)
+            textBlock.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 
