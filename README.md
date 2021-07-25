@@ -18,7 +18,7 @@
 
 ## Implementation
 
-![Снимок экрана 2021-07-23 в 14 29 43](https://user-images.githubusercontent.com/60622982/126776062-eb1ad262-e41a-4e7a-9d9e-e91eceec4abc.png)
+![Снимок экрана 2021-07-25 в 18 27 45](https://user-images.githubusercontent.com/60622982/126904514-f60de9c2-c971-4327-8cc2-b1c3102615be.png)
 
 ![Снимок экрана 2021-07-23 в 14 32 20](https://user-images.githubusercontent.com/60622982/126776068-7e668297-77c1-47b7-91b4-bfbae1077e78.png)
 
