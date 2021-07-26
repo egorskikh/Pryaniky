@@ -39,33 +39,40 @@ class PryanikyVC: UIViewController {
 
             viewsArray.forEach {
                 let view = $0
+
                 let model: ContentDataModel? = data.first { model -> Bool in
                     model.title == view
                 }
 
-                guard let contentModel = model?.body else { return }
+                guard
+                    let body = model?.body,
+                    let title = model?.title
+                else {
+                    return
+
+                }
 
                 switch view {
                 case "hz":
-                    if let hz: HzModel = contentModel.getContent() {
+                    if let hz: HzModel = body.getContent() {
                         let view = TextBlockView() { [weak self] in
-                            self?.viewModel.didTappedView(title: model?.title)
+                            self?.viewModel.didTappedView(title: title)
                         }
                         view.setTextContent(content: hz)
                         self.mainView.stackView.addArrangedSubview(view)
                     }
                 case "picture":
-                    if let picture: PictureModel = contentModel.getContent() {
+                    if let picture: PictureModel = body.getContent() {
                         let view = ImageView() { [weak self] in
-                            self?.viewModel.didTappedView(title: model?.title)
+                            self?.viewModel.didTappedView(title: title)
                         }
                         view.showContent(content: picture)
                         self.mainView.stackView.addArrangedSubview(view)
                     }
                 case "selector":
-                    if let selector: SelectorModel = contentModel.getContent() {
+                    if let selector: SelectorModel = body.getContent() {
                         let view = SelectorView() { [weak self] index in
-                            self?.viewModel.didTappedView(id: index, title: model?.title)
+                            self?.viewModel.didTappedView(id: index, title: title)
                         }
                         view.setSegmentedTextContent(selector)
                         self.mainView.stackView.addArrangedSubview(view)
