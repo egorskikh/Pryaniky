@@ -20,8 +20,8 @@ final class NetworkService {
     private func url() -> URL {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "pryaniky.com"
-        components.path = "/static/json/sample.json"
+        components.host = "chat.pryaniky.com"
+        components.path = "/json/data-custom-selected-id-none.json"
         return components.url!
     }
 

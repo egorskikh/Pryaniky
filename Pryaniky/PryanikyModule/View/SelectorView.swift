@@ -75,7 +75,7 @@ class SelectorView: UIView {
             segmentItems.append(String($0.id))
         }
         let segmentControl = UISegmentedControl(items: segmentItems)
-        segmentControl.selectedSegmentIndex = content.selectedId
+        segmentControl.selectedSegmentIndex = content.selectedId ?? 0
         segmentControl.addTarget(self, action: #selector(indexChanged), for: .valueChanged)
         self.segmentControl = segmentControl
     }
@@ -86,7 +86,7 @@ class SelectorView: UIView {
         self.selector = content
         createSegmentControl(content: content)
         setupConstraint()
-        label.text = content.variants[content.selectedId].text
+        label.text = content.variants[content.selectedId ?? 0].text
     }
 
 }

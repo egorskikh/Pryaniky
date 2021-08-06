@@ -8,7 +8,7 @@
 import Foundation
 
 struct SelectorModel: Decodable {
-    let selectedId: Int
+    let selectedId: Int?
     let variants: [SelectorVariantsModel]
 }
 
